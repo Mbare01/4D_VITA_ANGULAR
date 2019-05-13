@@ -1,0 +1,18 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+ </div>
+ 
+<h1>Registrazione</h1>
+<form [FormGroup]='myForm'>
+  
+  User name:<br>
+  <input type = 'text' [FormControl] = myform.controls['user']>
+  
+  User password:<br>
+  <input type = 'text' [FormControl] = myform.controls['pwd']>
+</form>
+
+
+
