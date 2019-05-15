@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Registrazione } from './registrazione.model';
 
 
@@ -15,4 +15,17 @@ export class AppComponent {
   
   myForm : FormGroup;
   valori : Registrazione;
+    songForm: any;
+  
+  constructor(fb : FormBuilder){
+    this.myForm = fb.group({'user':['',Validators.required], 'pwd' : ['',Validators.required]})
+  }
+  
+  onSubmit() {
+    if(!this.myForm.invalid){
+      this.valori = new Registrazione();
+      this.valori.user = this.myForm['user'].value;
+      this.valori.pwd = this.myForm['user'].value;
+    }
+  }
 }

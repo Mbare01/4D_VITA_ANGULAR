@@ -1,18 +1,27 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
- </div>
- 
+
 <h1>Registrazione</h1>
-<form [FormGroup]='myForm'>
+<form [formGroup]='myForm'>
   
   User name:<br>
-  <input type = 'text' [FormControl] = myform.controls['user']>
+  <input type = 'text' [formControl] = "myform.controls['user']"> <br>
   
   User password:<br>
-  <input type = 'text' [FormControl] = myform.controls['pwd']>
+  <input type = 'text' [formControl] = "myform.controls['pwd']"> <br>
+  
+  <button (click) = 'onSubmit'>onSubmit</button>
 </form>
 
+<div *ngIf="!myForm.controls['userControl'].valid" 
+     class="alert alert-danger">Campo user invalido
+</div>
+<div *ngIf="myForm.controls['userControl'].hasError('required')" 
+     class="alert alert-danger">Campo user richiesto
+</div>
 
+<div *ngIf="!myForm.controls['pwdControl'].valid" 
+     class="alert alert-danger">Campo password invalido
+</div>
+<div *ngIf="myForm.controls['pwdControl'].hasError('required')" 
+     class="alert alert-danger">Campo password richiesto
+</div>
 
