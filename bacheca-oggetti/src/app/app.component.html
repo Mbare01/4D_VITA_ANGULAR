@@ -2,26 +2,53 @@
 <h1>Registrazione</h1>
 <form [formGroup]='myForm'>
   
-  User name:<br>
-  <input type = 'text' [formControl] = "myform.controls['user']"> <br>
+   Nome <input type = "text" [formControl] = "myForm.controls ['nome']"> <br>
+   
+<div *ngIf="!myForm.controls['nome'].valid" 
+     class="alert alert-danger">nome is invalid
+</div>
+<div *ngIf="myForm.controls['nome'].hasError('required')" 
+     class="alert alert-danger">nome is required
+</div>
+
+
+    Cognome <input type = "text" [formControl] = "myForm.controls ['cognome']"> <br>
+    
+    
+<div *ngIf="!myForm.controls['cognome'].valid" 
+     class="alert alert-danger">cognome is invalid
+</div>
+<div *ngIf="myForm.controls['cognome'].hasError('required')" 
+     class="alert alert-danger">cognome is required
+</div>
+
+
+    User <input type = "text" [formControl] = "myForm.controls ['user']"> <br>
+    
+    
+<div *ngIf="!myForm.controls['user'].valid" 
+     class="alert alert-danger">user is invalid
+</div>
+<div *ngIf="myForm.controls['user'].hasError('required')" 
+     class="alert alert-danger">user is required
+</div>
+
+
+    Password <input type ="text" [formControl] = "myForm.controls ['pwd']"> <br>
+    
+    
+<div *ngIf="!myForm.controls['pwd'].valid" 
+     class="alert alert-danger">pwd is invalid
+</div>
+<div *ngIf="myForm.controls['pwd'].hasError('required')" 
+     class="alert alert-danger">pwd is required
+</div>
+
   
-  User password:<br>
-  <input type = 'text' [formControl] = "myform.controls['pwd']"> <br>
+  <button>Aggiungi</button>
   
-  <button (click) = 'onSubmit'>onSubmit</button>
+  <app-elenco [utenti] = "vettUtenti" ></app-elenco>
 </form>
 
-<div *ngIf="!myForm.controls['userControl'].valid" 
-     class="alert alert-danger">Campo user invalido
-</div>
-<div *ngIf="myForm.controls['userControl'].hasError('required')" 
-     class="alert alert-danger">Campo user richiesto
-</div>
 
-<div *ngIf="!myForm.controls['pwdControl'].valid" 
-     class="alert alert-danger">Campo password invalido
-</div>
-<div *ngIf="myForm.controls['pwdControl'].hasError('required')" 
-     class="alert alert-danger">Campo password richiesto
-</div>
 
