@@ -1,6 +1,6 @@
 
 <h1>Registrazione</h1>
-<form [formGroup]='myForm'>
+<form [formGroup]='myForm' (ngSubmit) = 'onSubmit()'>
   
    Nome <input type = "text" [formControl] = "myForm.controls ['nome']"> <br>
    

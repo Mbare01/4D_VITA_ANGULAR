@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Registrazione } from './registrazione.model';
+import { Utenti } from './mock-utenti';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,10 @@ export class AppComponent {
   title = 'bacheca-oggetti';
   myForm: FormGroup;
   input : Registrazione; 
-  vettUtenti :Registrazione[]; 
+  vettUtenti : Registrazione[] ; 
    
   constructor(fb: FormBuilder){
-    this.vettUtenti = new Array();
+    this.vettUtenti =  Utenti;
     this.myForm = fb.group({
       'nome' : ['',Validators.required],
       'cognome' : ['',Validators.required],
@@ -25,6 +26,8 @@ export class AppComponent {
     
   } 
   onSubmit(){
+    
+    console.log("ciao");
     if(!this.myForm.invalid) 
     {
       

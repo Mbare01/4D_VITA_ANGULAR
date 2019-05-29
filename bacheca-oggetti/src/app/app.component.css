@@ -7,3 +7,16 @@
 .ng-invalid:not(form) {
    border-left: 5px solid #FF0000; /* red */
  }
+
+button{
+   background-color: red;
+}
+
+form{
+   background-color: lightblue;
+}
+
+h1{
+   text-align: center;
+   color: orange;
+}
